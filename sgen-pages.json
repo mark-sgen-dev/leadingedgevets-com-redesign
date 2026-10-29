@@ -1,0 +1,13 @@
+{
+ "schema": "sgen/pages@1",
+ "extra": [
+  "/about",
+  "/booking-calendar/indoor-arena-reservation",
+  "/profile/8bd4de25-b11e-4292-a364-88483cb940a915809/events",
+  "/profile/8bd4de25-b11e-4292-a364-88483cb940a915809/profile",
+  "/profile/__doc/events",
+  "/profile/__doc/profile",
+  "/profile/abagail48/events",
+  "/profile/abagail48/profile"
+ ]
+}
