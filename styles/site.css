@@ -197,22 +197,26 @@ h4, h5, h6 { font-size: var(--fs-h4); font-weight: 700; }
 .menu__list a:hover { color: var(--c-2); }
 .menu__list .menu__child a { padding-left: var(--sp-6); font-weight: 500; text-transform: none; letter-spacing: 0; color: var(--c-20); }
 
-/* The chips row: centred while it fits, scrolling sideways (its own scroll, never the page's) once it does not. */
+/* The chips row: centred while it fits, scrolling sideways (its own scroll, never the page's) once it does not. The
+   list itself is the scroller, as wide as its container, so no box on the page runs past the screen. */
 .chips-row { border-bottom: 1px solid var(--c-16); }
-.chips-row .container { overflow-x: auto; scrollbar-width: none; }
-.chips-row .container::-webkit-scrollbar { display: none; }
-.chips-row__list { list-style: none; margin: 0 auto; padding: 0; display: flex; gap: 6px; width: max-content; min-height: var(--chips-h); align-items: center; }
+.chips-row__list { list-style: none; margin: 0; padding: 0; display: flex; gap: 6px; min-height: var(--chips-h); align-items: center; overflow-x: auto; scrollbar-width: none; }
+.chips-row__list::-webkit-scrollbar { display: none; }
+.chips-row__list > li { flex: none; }
+/* Auto margins centre the chips while they fit and fall to nothing once the row scrolls, so the first is never cut off. */
+.chips-row__list > li:first-child { margin-left: auto; }
+.chips-row__list > li:last-child { margin-right: auto; }
 .chips-row .chip {
   min-height: 36px; padding: 0 10px; border: 1px solid var(--c-18); background: transparent; color: var(--c-1);
   font-family: var(--font-display); font-size: .75rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap;
 }
 /* The eleven service names fit one row from 1440 px; below that the row scrolls, fading at its right edge. */
 @media (max-width: 1439px) {
-  .chips-row .container {
+  .chips-row__list {
     -webkit-mask-image: linear-gradient(90deg, var(--c-3) 0, var(--c-3) calc(100% - 40px), transparent);
     mask-image: linear-gradient(90deg, var(--c-3) 0, var(--c-3) calc(100% - 40px), transparent);
   }
-  .chips-row__list { margin: 0; padding-right: 40px; }
+  .chips-row__list > li:last-child { padding-right: 40px; }
 }
 .chips-row .chip:hover, .chips-row .chip[aria-current="page"] { background: var(--c-1); color: var(--c-4); border-color: var(--c-1); }
 

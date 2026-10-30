@@ -2,10 +2,10 @@
  *
  *   <script src="../scripts/site-motion.js" defer></script>
  *
- * It does four things and nothing else: it switches the stylesheet's start
+ * It does five things and nothing else: it switches the stylesheet's start
  * states on, reveals sections as they come into view, settles the header once
- * the page scrolls, and counts a figure up to the number already written on the
- * page.
+ * the page scrolls, counts a figure up to the number already written on the
+ * page, and starts a section's video as its frame nears the screen.
  *
  * THE RULES THIS FILE IS WRITTEN UNDER.
  *
@@ -28,7 +28,8 @@
  *     elements, and do nothing at all when a page has none of them.
  *   * prefers-reduced-motion: reduce MEANS NOTHING MOVES: everything that would
  *     have been revealed is shown at once, and every figure is written whole.
- *   * No dependencies, and nothing is fetched or reported anywhere.
+ *   * No dependencies, and nothing is reported anywhere. The one thing it makes
+ *     the browser load is a section video, once its frame nears the screen.
  */
 (function () {
   'use strict';
@@ -210,7 +211,41 @@
     watch(items, COUNT_AT, runCount);
   }
 
-  function arm() { armReveal(); armCounters(); armHeader(); }
+  // ---- the section videos --------------------------------------------------
+
+  // A section video ships with no autoplay and preload="none", so not a byte of
+  // it is fetched until its frame comes within a fifth of a screen of view. It
+  // plays from there and pauses once it is out of that reach again; until it
+  // plays, the still frame under it is what shows. Reduced motion: the
+  // stylesheet hides the video and it is never started. A browser that refuses
+  // the play (a phone saving power) leaves the still frame, as autoplay did.
+  var CLIP_REACH = '20%';     // of the screen's height, above it and below it
+
+  function play(video) {
+    var started = video.play();
+    if (started && typeof started.catch === 'function') started.catch(function () {});
+  }
+
+  function armClips() {
+    var clips = all('video.frame__video');
+    if (!clips.length || reduce) return;
+    if (!observes) {
+      for (var i = 0; i < clips.length; i++) play(clips[i]);
+      return;
+    }
+    var Observer = (typeof IntersectionObserver === 'function')
+      ? IntersectionObserver : window.IntersectionObserver;
+    var io = new Observer(function (entries) {
+      for (var j = 0; j < entries.length; j++) {
+        var video = entries[j].target;
+        if (entries[j].isIntersecting) play(video);
+        else if (!video.paused) video.pause();
+      }
+    }, { threshold: 0, rootMargin: CLIP_REACH + ' 0px ' + CLIP_REACH + ' 0px' });
+    for (var k = 0; k < clips.length; k++) io.observe(clips[k]);
+  }
+
+  function arm() { armReveal(); armCounters(); armHeader(); armClips(); }
 
   // `defer` means the document is parsed by the time this runs. The guard is
   // for a page that links it some other way.
