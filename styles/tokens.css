@@ -34,18 +34,23 @@
   /* --- type -------------------------------------------------------- */
   --font-body: Montserrat, "Montserrat Fallback", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-display: Barlow, "Barlow Fallback", "Arial Narrow", Arial, sans-serif;
+  /* The type scale is the design reference's (its stylesheet, read 30 Oct 2026): headings in Barlow 800,
+     tight and in capitals; the larger sizes follow the screen's width and height together, as its own do. */
   --fs-xs: .8125rem;
   --fs-sm: .9375rem;
-  --fs-body: clamp(1rem, .97rem + .15vw, 1.0625rem);
-  --fs-lead: clamp(1.0625rem, 1rem + .35vw, 1.25rem);
-  --fs-h4: clamp(1.125rem, 1.05rem + .35vw, 1.3rem);
-  --fs-h3: clamp(1.3rem, 1.15rem + .7vw, 1.75rem);
-  --fs-h2: clamp(2rem, 1.45rem + 2.4vw, 3.4rem);
-  --fs-h1: clamp(2.4rem, 1.6rem + 3.6vw, 4.6rem);
-  --lh-tight: 1.02;
-  --lh-body: 1.65;
-  --tracking-display: -.005em;
-  --tracking-eyebrow: .14em;
+  --fs-body: clamp(.9375rem, .9rem + .12vw, 1rem);
+  --fs-lead: clamp(.9375rem, min(2.1svh, 1.25vw), 1.125rem);
+  --fs-h4: clamp(1.0625rem, 1rem + .3vw, 1.25rem);
+  --fs-h3: clamp(1.125rem, min(2.5svh, 1.5vw), 1.375rem);
+  --fs-card: clamp(1.5rem, 1.1rem + 1.3vw, 2.5rem);
+  --fs-h2: clamp(1.75rem, min(3.6vw, 6svh), 3.25rem);
+  --fs-h1: clamp(1.875rem, min(5.4vw, 8.6svh), 4.75rem);
+  --fw-display: 800;
+  --lh-tight: .94;
+  --lh-body: 1.55;
+  --tracking-display: .005em;
+  --tracking-eyebrow: .16em;
+  --tracking-ui: .1em;
 
   /* --- space ------------------------------------------------------- */
   --sp-1: 4px;
@@ -57,16 +62,23 @@
   --sp-7: 48px;
   --sp-8: 64px;
   --sp-9: 96px;
-  --gutter: clamp(16px, 4vw, 40px);
-  --section-y: clamp(56px, 7vw, 112px);
-  --container: 1240px;
+  --gutter: clamp(16px, 4vw, 56px);
+  --section-y: clamp(44px, 4.5vw, 64px);
+  --container: 1360px;
   --measure: 68ch;
+  /* The header's three rows, as the reference stacks them. */
+  --util-h: 44px;
+  --bar-h: 64px;
+  --chips-h: 52px;
 
   /* --- shape ------------------------------------------------------- */
   --radius-sm: 8px;
   --radius: 14px;
   --radius-lg: 22px;
   --radius-pill: 999px;
+  --btn-h: 54px;
+  /* The fine dot texture the reference lays over its black and coal bands. */
+  --tex-dots: radial-gradient(circle, var(--c-16) 0 1px, transparent 1.5px) 0 0 / 6px 6px;
   --shadow-1: 0 1px 2px 0 rgba(0, 0, 0, .12), 0 18px 36px -20px rgba(0, 0, 0, .6);
   --shadow-2: inset 0 1px 0 0 rgba(255, 255, 255, .08), 0 22px 44px -26px rgba(0, 0, 0, .8);
   --shadow-3: 0 26px 50px -26px rgb(0, 0, 0);
@@ -75,7 +87,7 @@
   /* --- motion: the reference's own easing replaces the kit's ------- */
   --ease: cubic-bezier(.2, .7, .2, 1);
   --t-fast: .2s var(--ease);
-  --t-reveal: .7s var(--ease);
-  --header-stuck-pad: .35rem;
+  --t-reveal: .5s var(--ease); /* the reference's .7s, quickened at Mark's ask (30 Oct 2026) */
+  --header-stuck-pad: 0px; /* the three-row header keeps its height once stuck, so the page never jumps */
   --shadow-stuck: 0 22px 44px -26px rgba(0, 0, 0, .8);
 }

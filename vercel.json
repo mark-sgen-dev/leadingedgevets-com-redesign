@@ -78,10 +78,6 @@
       "destination": "/about.html"
     },
     {
-      "source": "/boarding",
-      "destination": "/boarding.html"
-    },
-    {
       "source": "/book-online",
       "destination": "/book-online.html"
     },
@@ -94,30 +90,6 @@
       "destination": "/contact.html"
     },
     {
-      "source": "/copy-of-dental-care-and-oral-surger",
-      "destination": "/copy-of-dental-care-and-oral-surger.html"
-    },
-    {
-      "source": "/copy-of-diagnostic-care",
-      "destination": "/copy-of-diagnostic-care.html"
-    },
-    {
-      "source": "/copy-of-small-animal-services",
-      "destination": "/copy-of-small-animal-services.html"
-    },
-    {
-      "source": "/copy-of-surgical-care",
-      "destination": "/copy-of-surgical-care.html"
-    },
-    {
-      "source": "/dairy",
-      "destination": "/dairy.html"
-    },
-    {
-      "source": "/equine",
-      "destination": "/equine.html"
-    },
-    {
       "source": "/equine-boarding",
       "destination": "/equine-boarding.html"
     },
@@ -128,10 +100,6 @@
     {
       "source": "/equine-events",
       "destination": "/equine-events.html"
-    },
-    {
-      "source": "/equine-reproduction",
-      "destination": "/equine-reproduction.html"
     },
     {
       "source": "/event-details-registration/bovine-producers-tour-demo-1pm",
@@ -150,44 +118,8 @@
       "destination": "/gallery.html"
     },
     {
-      "source": "/general-1",
-      "destination": "/general-1.html"
-    },
-    {
-      "source": "/grooming",
-      "destination": "/grooming.html"
-    },
-    {
-      "source": "/home",
-      "destination": "/home.html"
-    },
-    {
-      "source": "/home/categories/dairy",
-      "destination": "/home/categories/dairy.html"
-    },
-    {
-      "source": "/home/categories/equine",
-      "destination": "/home/categories/equine.html"
-    },
-    {
-      "source": "/home/categories/events",
-      "destination": "/home/categories/events.html"
-    },
-    {
-      "source": "/home/categories/livestock",
-      "destination": "/home/categories/livestock.html"
-    },
-    {
-      "source": "/home/categories/small-animal",
-      "destination": "/home/categories/small-animal.html"
-    },
-    {
       "source": "/links",
       "destination": "/links.html"
-    },
-    {
-      "source": "/livestock",
-      "destination": "/livestock.html"
     },
     {
       "source": "/meet-the-staff",
@@ -196,162 +128,6 @@
     {
       "source": "/new-clinic",
       "destination": "/new-clinic.html"
-    },
-    {
-      "source": "/post/2018-bovine-client-lunch-dinner",
-      "destination": "/post/2018-bovine-client-lunch-dinner.html"
-    },
-    {
-      "source": "/post/2018-equine-client-appreciation-dinner",
-      "destination": "/post/2018-equine-client-appreciation-dinner.html"
-    },
-    {
-      "source": "/post/2026-equine-vaccination-deworming-protocols",
-      "destination": "/post/2026-equine-vaccination-deworming-protocols.html"
-    },
-    {
-      "source": "/post/april-is-national-heartworm-awareness-month",
-      "destination": "/post/april-is-national-heartworm-awareness-month.html"
-    },
-    {
-      "source": "/post/beef-herd-health",
-      "destination": "/post/beef-herd-health.html"
-    },
-    {
-      "source": "/post/bob-cat-adventures",
-      "destination": "/post/bob-cat-adventures.html"
-    },
-    {
-      "source": "/post/calf-umbilical-surgery",
-      "destination": "/post/calf-umbilical-surgery.html"
-    },
-    {
-      "source": "/post/canine-influenza",
-      "destination": "/post/canine-influenza.html"
-    },
-    {
-      "source": "/post/celebrating-dental-health-month-in-february-tips-for-a-brighter-smile",
-      "destination": "/post/celebrating-dental-health-month-in-february-tips-for-a-brighter-smile.html"
-    },
-    {
-      "source": "/post/clinic-update-interior-work",
-      "destination": "/post/clinic-update-interior-work.html"
-    },
-    {
-      "source": "/post/cold-weather-considersations",
-      "destination": "/post/cold-weather-considersations.html"
-    },
-    {
-      "source": "/post/dairy-calf-diarrhea-why-are-they-at-higher-risk",
-      "destination": "/post/dairy-calf-diarrhea-why-are-they-at-higher-risk.html"
-    },
-    {
-      "source": "/post/does-your-dog-have-a-license",
-      "destination": "/post/does-your-dog-have-a-license.html"
-    },
-    {
-      "source": "/post/drinking-post-frost-free-waterer-saver",
-      "destination": "/post/drinking-post-frost-free-waterer-saver.html"
-    },
-    {
-      "source": "/post/equine-client-appreciation-dinner",
-      "destination": "/post/equine-client-appreciation-dinner.html"
-    },
-    {
-      "source": "/post/equine-clients-rsvp-before-february-23rd-orders-due-february-27th",
-      "destination": "/post/equine-clients-rsvp-before-february-23rd-orders-due-february-27th.html"
-    },
-    {
-      "source": "/post/equine-cushings-disease",
-      "destination": "/post/equine-cushings-disease.html"
-    },
-    {
-      "source": "/post/equine-dental-care",
-      "destination": "/post/equine-dental-care.html"
-    },
-    {
-      "source": "/post/equine-vaccination-and-deworming-protocols",
-      "destination": "/post/equine-vaccination-and-deworming-protocols.html"
-    },
-    {
-      "source": "/post/fear-free-visits",
-      "destination": "/post/fear-free-visits.html"
-    },
-    {
-      "source": "/post/feeding-your-horse",
-      "destination": "/post/feeding-your-horse.html"
-    },
-    {
-      "source": "/post/flea-and-tick-prevention-sale-going-on-now",
-      "destination": "/post/flea-and-tick-prevention-sale-going-on-now.html"
-    },
-    {
-      "source": "/post/holiday-pet-preparedness",
-      "destination": "/post/holiday-pet-preparedness.html"
-    },
-    {
-      "source": "/post/international-veterinary-medicine-day",
-      "destination": "/post/international-veterinary-medicine-day.html"
-    },
-    {
-      "source": "/post/large-animal-surgical-procedures",
-      "destination": "/post/large-animal-surgical-procedures.html"
-    },
-    {
-      "source": "/post/new-clinic-update",
-      "destination": "/post/new-clinic-update.html"
-    },
-    {
-      "source": "/post/northwest-wisconsin-graziers-network",
-      "destination": "/post/northwest-wisconsin-graziers-network.html"
-    },
-    {
-      "source": "/post/rabies-positive-puppy-in-northwestern-mn",
-      "destination": "/post/rabies-positive-puppy-in-northwestern-mn.html"
-    },
-    {
-      "source": "/post/reduced-cost-spay-and-neuter-days",
-      "destination": "/post/reduced-cost-spay-and-neuter-days.html"
-    },
-    {
-      "source": "/post/sawyer-county-vaccination-clinic",
-      "destination": "/post/sawyer-county-vaccination-clinic.html"
-    },
-    {
-      "source": "/post/small-animal-vaccine-clinic",
-      "destination": "/post/small-animal-vaccine-clinic.html"
-    },
-    {
-      "source": "/post/something-to-celebrate",
-      "destination": "/post/something-to-celebrate.html"
-    },
-    {
-      "source": "/post/the-tale-of-the-nail",
-      "destination": "/post/the-tale-of-the-nail.html"
-    },
-    {
-      "source": "/post/university-of-wisconsin-small-ruminant-webinar-series-on-grazing",
-      "destination": "/post/university-of-wisconsin-small-ruminant-webinar-series-on-grazing.html"
-    },
-    {
-      "source": "/post/use-myvetstoreonline-now",
-      "destination": "/post/use-myvetstoreonline-now.html"
-    },
-    {
-      "source": "/post/uw-madison-extension-services",
-      "destination": "/post/uw-madison-extension-services.html"
-    },
-    {
-      "source": "/post/west-nile-virus",
-      "destination": "/post/west-nile-virus.html"
-    },
-    {
-      "source": "/post/what-s-that-in-the-snow",
-      "destination": "/post/what-s-that-in-the-snow.html"
-    },
-    {
-      "source": "/post/wolves-and-livestock",
-      "destination": "/post/wolves-and-livestock.html"
     },
     {
       "source": "/product-page/levs-baseball-cap",
@@ -426,16 +202,8 @@
       "destination": "/service-page/indoor-arena-reservation.html"
     },
     {
-      "source": "/services",
-      "destination": "/services.html"
-    },
-    {
       "source": "/shop",
       "destination": "/shop.html"
-    },
-    {
-      "source": "/small-animal-services",
-      "destination": "/small-animal-services.html"
     }
   ]
 }

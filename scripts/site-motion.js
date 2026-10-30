@@ -49,8 +49,10 @@
   // share of the screen's height -- never a share of the section. A section
   // taller than five screens can never have a fifth of itself in view at once,
   // and waiting for that left it at opacity 0 for good (a 6000px section on a
-  // 666px screen, measured in Chrome).
-  var REVEAL_AT = 0.2;
+  // 666px screen, measured in Chrome). A tenth, not the kit's fifth: at a fifth
+  // a reader scrolled through a fifth of a screen of empty band before anything
+  // moved (Mark, 30 Oct 2026).
+  var REVEAL_AT = 0.1;
   var COUNT_AT = 0.3;         // ... and of a band of figures
   var COUNT_MS = 1300;
 
@@ -63,15 +65,18 @@
 
   // `up` is REVEAL_AT or COUNT_AT: the bottom of the screen is pulled up by that
   // share, and anything at all inside what is left counts, whatever its height.
+  // `act` is also told the item's place among those that came into view in the
+  // same moment.
   function watch(items, up, act) {
     var Observer = (typeof IntersectionObserver === 'function')
       ? IntersectionObserver : window.IntersectionObserver;
     var io = new Observer(function (entries) {
+      var k = 0;
       for (var i = 0; i < entries.length; i++) {
         if (!entries[i].isIntersecting) continue;
         var el = entries[i].target;
         io.unobserve(el);
-        act(el);
+        act(el, k++);
       }
     }, { threshold: 0, rootMargin: '0px 0px -' + Math.round(up * 100) + '% 0px' });
     for (var j = 0; j < items.length; j++) io.observe(items[j]);
@@ -104,17 +109,6 @@
 
   // ---- the reveal ----------------------------------------------------------
 
-  // Its position among the `.reveal` elements under the same parent, which is
-  // what makes a row of cards arrive one after another instead of together.
-  function staggerIndex(el) {
-    var parent = el.parentNode;
-    if (!parent || !parent.querySelectorAll) return 0;
-    var sibs;
-    try { sibs = Array.prototype.slice.call(parent.querySelectorAll('.reveal')); } catch (e) { return 0; }
-    var at = sibs.indexOf(el);
-    return at < 0 ? 0 : at;
-  }
-
   function armReveal() {
     var items = all('.reveal');
     if (!items.length) return;
@@ -122,8 +116,13 @@
       for (var i = 0; i < items.length; i++) items[i].classList.add('in-view');
       return;
     }
-    watch(items, REVEAL_AT, function (el) {
-      el.style.transitionDelay = (staggerIndex(el) * STAGGER_MS) + 'ms';
+    // What comes into view in the same moment, such as a row of cards, arrives
+    // one after another; a section that comes into view on its own starts at
+    // once. The kit counted every `.reveal` under the same parent instead, so
+    // each band of a page waited 80ms more than the band above it: 560ms for the
+    // eighth on the home page (measured 30 Oct 2026).
+    watch(items, REVEAL_AT, function (el, k) {
+      el.style.transitionDelay = (k * STAGGER_MS) + 'ms';
       el.classList.add('in-view');
     });
 
